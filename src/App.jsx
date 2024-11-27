@@ -11,10 +11,48 @@ import { useState } from "react";
 import { tasks } from "./data/tasks";
 import "./App.css";
 
-console.log(tasks);
+const currentTasks = tasks.filter(
+  (task) => task.state == "backlog" || task.state == "in_progress"
+);
+const completedTasks = tasks.filter((task) => task.state == "completed");
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <header>
+        <h1>Task Manager</h1>
+      </header>
+
+      <section className="current-tasks">
+        <h3>Completed Tasks ({currentTasks.length})</h3>
+        <ul>
+          {currentTasks.map((task, index) => {
+            return (
+              <li key={index}>
+                <p>{task.title}</p>
+                <p>Priority: {task.priority}</p>
+                <p>Est. time: {task.estimatedTime}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+      <section className="completed-tasks">
+        <h3>Completed Tasks ({completedTasks.length})</h3>
+        <ul>
+          {completedTasks.map((task, index) => {
+            return (
+              <li key={index}>
+                <p>{task.title}</p>
+                <p>Priority: {task.priority}</p>
+                <p>Est. time: {task.estimatedTime}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    </>
+  );
 }
 
 export default App;
