@@ -29,7 +29,7 @@ function App() {
           {currentTasks.map((task, index) => {
             return (
               <li key={index}>
-                <p>{task.title}</p>
+                <b>{task.title}</b>
                 <p>Priority: {task.priority}</p>
                 <p>Est. time: {task.estimatedTime}</p>
               </li>
@@ -37,13 +37,14 @@ function App() {
           })}
         </ul>
       </section>
+      <hr />
       <section className="completed-tasks">
         <h3>Completed Tasks ({completedTasks.length})</h3>
         <ul>
           {completedTasks.map((task, index) => {
             return (
               <li key={index}>
-                <p>{task.title}</p>
+                <b>{task.title}</b>
                 <p>Priority: {task.priority}</p>
                 <p>Est. time: {task.estimatedTime}</p>
               </li>
