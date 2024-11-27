@@ -20,38 +20,39 @@ function App() {
   return (
     <>
       <header>
-        <h1>Task Manager</h1>
+        <h2>Task Manager</h2>
       </header>
-
-      <section className="current-tasks">
-        <h3>Completed Tasks ({currentTasks.length})</h3>
-        <ul>
-          {currentTasks.map((task, index) => {
-            return (
-              <li key={index}>
-                <b>{task.title}</b>
-                <p>Priority: {task.priority}</p>
-                <p>Est. time: {task.estimatedTime}</p>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-      <hr />
-      <section className="completed-tasks">
-        <h3>Completed Tasks ({completedTasks.length})</h3>
-        <ul>
-          {completedTasks.map((task, index) => {
-            return (
-              <li key={index}>
-                <b>{task.title}</b>
-                <p>Priority: {task.priority}</p>
-                <p>Est. time: {task.estimatedTime}</p>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+      <div className="container">
+        <section className="current-tasks">
+          <h3>Completed Tasks ({currentTasks.length})</h3>
+          <ul>
+            {currentTasks.map((task, index) => {
+              return (
+                <li key={index}>
+                  <b>{task.title}</b>
+                  <p>Priority: {task.priority}</p>
+                  <p>Est. time: {task.estimatedTime}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+        <hr />
+        <section className="completed-tasks">
+          <h3>Completed Tasks ({completedTasks.length})</h3>
+          <ul>
+            {completedTasks.map((task, index) => {
+              return (
+                <li key={index}>
+                  <b>{task.title}</b>
+                  <p>Priority: {task.priority}</p>
+                  <p>Est. time: {task.estimatedTime}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      </div>
     </>
   );
 }
