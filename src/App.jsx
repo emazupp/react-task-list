@@ -29,7 +29,10 @@ function App() {
             {currentTasks.map((task, index) => {
               return (
                 <li key={index}>
-                  <b>{task.title}</b>
+                  <span>{task.title}</span>
+                  <div className={`container-state-item ${task.state}`}>
+                    <span>{task.state}</span>
+                  </div>
                   <p>Priority: {task.priority}</p>
                   <p>Est. time: {task.estimatedTime}</p>
                 </li>
@@ -44,7 +47,10 @@ function App() {
             {completedTasks.map((task, index) => {
               return (
                 <li key={index}>
-                  <b>{task.title}</b>
+                  <span>{task.title}</span>
+                  <div className={`container-state-item ${task.state}`}>
+                    <span>{task.state}</span>
+                  </div>
                   <p>Priority: {task.priority}</p>
                   <p>Est. time: {task.estimatedTime}</p>
                 </li>

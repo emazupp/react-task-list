@@ -20,3 +20,21 @@ header {
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+.container-state-item {
+  display: inline;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.container-state-item.backlog {
+  background-color: rgb(255, 255, 104);
+}
+
+.container-state-item.in_progress {
+  background-color: rgb(255, 103, 103);
+}
+
+.container-state-item.completed {
+  background-color: rgb(70, 196, 70);
+}
